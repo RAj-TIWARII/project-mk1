@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@VoLtSpace</title>
+    <style>
+        /* Reset margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: #ddd;
+        }
+
+        /* Body styling */
+        body {
+            background: #121212;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            padding: 15px 10%;
+            background-color: rgba(20, 20, 20, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Title Styling with GIF */
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        .title-gif {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        /* Nav Links */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #aaa;
+        }
+
+        /* Toggle Button for Mobile */
+        .menu-btn {
+            display: none;
+            font-size: 1.5em;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        /* Content Section */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+            color: #ddd;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        p {
+            line-height: 1.5;
+            color: #bbb;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            color: #777;
+            font-size: 0.9em;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide links by default */
+                flex-direction: column;
+                background: rgba(20, 20, 20, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 10%;
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            .nav-links a {
+                margin-bottom: 10px;
+            }
+
+            .menu-btn {
+                display: block; /* Show menu button on small screens */
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="title-container">
+            <img src="https://cdn.discordapp.com/avatars/830081289142403095/a_4dfd457f1ccabac8333e7c21466a8f9c.gif?size=4096" alt="Title Icon" class="title-gif">
+            <div class="title">@VoLtSpace</div>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div> <!-- Menu icon for mobile -->
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
+            <a href="#missions">Missions</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="content" id="home">
+        <h1>Welcome to @VoLtSpace</h1>
+        <p>
+            Explore the latest in space exploration. Join us in discovering missions and insights beyond Earth.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 @VoLtSpace. All rights reserved.
+    </footer>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
